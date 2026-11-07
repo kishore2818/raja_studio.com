@@ -9,6 +9,13 @@
   --font-mono: 'JetBrains Mono', monospace;
 }
 
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100% !important;
+  width: 100% !important;
+  position: relative;
+}
+
 @layer base {
   body {
     background-color: #08080A;
@@ -17,13 +24,12 @@
   }
 }
 
-/* Film Grain Texture */
+/* Film Grain Texture - Using inset-0 and 100% to prevent 100vw scrollbar bug */
 .film-grain {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   pointer-events: none;
   z-index: 9999;
   opacity: 0.03;
@@ -32,7 +38,7 @@
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 5px;
 }
 
 ::-webkit-scrollbar-track {
@@ -57,7 +63,7 @@
   scrollbar-width: none;
 }
 
-/* Subtle fade in keyframes */
+/* Fade in keyframes */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(4px); }
   to { opacity: 1; transform: translateY(0); }

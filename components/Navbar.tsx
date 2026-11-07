@@ -12,7 +12,7 @@ export const Navbar: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 40);
+      setScrolled(window.scrollY > 30);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -22,7 +22,7 @@ export const Navbar: React.FC = () => {
     { name: 'Featured Works', href: '#works' },
     { name: 'Services', href: '#services' },
     { name: 'About Studio', href: '#about' },
-    { name: 'Cinema Gear', href: '#gear' },
+    { name: 'Equipment', href: '#gear' },
     { name: 'Reviews', href: '#reviews' },
     { name: 'Location', href: '#location' },
   ];
@@ -30,21 +30,21 @@ export const Navbar: React.FC = () => {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300 max-w-full overflow-x-hidden ${
           scrolled
-            ? 'py-3.5 bg-studio-pitch/90 backdrop-blur-xl border-b border-studio-border/60 shadow-2xl'
-            : 'py-6 bg-gradient-to-b from-studio-pitch/80 to-transparent'
+            ? 'py-3 bg-studio-pitch/95 backdrop-blur-xl border-b border-studio-border/60 shadow-2xl'
+            : 'py-4 sm:py-6 bg-gradient-to-b from-studio-pitch/90 to-transparent'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 w-full">
+          <div className="flex items-center justify-between gap-2 w-full">
             {/* Brand Logo */}
-            <Link href="/" className="group transition-transform active:scale-95">
+            <Link href="/" className="group transition-transform active:scale-95 shrink min-w-0">
               <StudioLogo size="md" />
             </Link>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center gap-7">
+            <nav className="hidden lg:flex items-center gap-7 shrink-0">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
@@ -56,9 +56,8 @@ export const Navbar: React.FC = () => {
               ))}
             </nav>
 
-            {/* Direct Contact CTAs */}
-            <div className="hidden sm:flex items-center gap-3">
-              {/* WhatsApp Quick Link */}
+            {/* Desktop Direct Contact CTAs */}
+            <div className="hidden sm:flex items-center gap-3 shrink-0">
               <a
                 href={STUDIO_INFO.whatsappLink}
                 target="_blank"
@@ -67,10 +66,9 @@ export const Navbar: React.FC = () => {
                 title="Chat on WhatsApp"
               >
                 <MessageCircle className="w-3.5 h-3.5 text-emerald-400" />
-                <span className="hidden md:inline">WhatsApp</span>
+                <span>WhatsApp</span>
               </a>
 
-              {/* Direct Phone Call Button */}
               <a
                 href={STUDIO_INFO.callLink}
                 className="flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-wider bg-studio-gold hover:bg-studio-gold-hover text-studio-pitch transition-all duration-200 shadow-lg shadow-studio-gold/20 hover:shadow-studio-gold/40"
@@ -80,19 +78,20 @@ export const Navbar: React.FC = () => {
               </a>
             </div>
 
-            {/* Mobile Menu Button */}
-            <div className="lg:hidden flex items-center gap-2">
+            {/* Mobile Header Actions */}
+            <div className="sm:hidden flex items-center gap-2 shrink-0">
               <a
                 href={STUDIO_INFO.callLink}
-                className="p-2 rounded-full bg-studio-gold text-studio-pitch"
+                className="w-9 h-9 rounded-full bg-studio-gold text-studio-pitch flex items-center justify-center shrink-0 shadow-md shadow-studio-gold/20"
                 title="Call Studio"
+                aria-label="Call studio"
               >
-                <Phone className="w-4 h-4" />
+                <Phone className="w-4 h-4 fill-studio-pitch" />
               </a>
 
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="p-2 rounded-lg text-studio-silver hover:text-white border border-studio-border bg-studio-surface/80"
+                className="w-9 h-9 rounded-lg text-studio-silver hover:text-white border border-studio-border bg-studio-surface/80 flex items-center justify-center shrink-0"
                 aria-label="Toggle menu"
               >
                 {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -104,11 +103,11 @@ export const Navbar: React.FC = () => {
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-40 bg-studio-pitch/98 backdrop-blur-2xl lg:hidden flex flex-col justify-between pt-24 pb-8 px-6 animate-fadeIn">
+        <div className="fixed inset-0 z-40 bg-studio-pitch/98 backdrop-blur-2xl lg:hidden flex flex-col justify-between pt-24 pb-20 px-6 animate-fadeIn">
           <div className="space-y-6">
             <div className="flex items-center gap-2 py-2 px-3 rounded-full bg-studio-surface border border-studio-border w-fit">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span className="text-xs text-studio-silver font-mono">Accepting 2025-2026 Dates</span>
+              <span className="text-xs text-studio-silver font-mono">Open Today: 8:00 AM – 9:30 PM</span>
             </div>
 
             <div className="flex flex-col space-y-4">
@@ -143,8 +142,8 @@ export const Navbar: React.FC = () => {
               <MessageCircle className="w-4 h-4" />
               <span>Message on WhatsApp</span>
             </a>
-            <p className="text-center text-[11px] text-studio-muted font-mono pt-2">
-              {STUDIO_INFO.address}
+            <p className="text-center text-[11px] text-studio-muted font-mono pt-1">
+              79, Taluk Office Opp, Srivaikuntam
             </p>
           </div>
         </div>

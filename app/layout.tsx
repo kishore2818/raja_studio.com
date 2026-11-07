@@ -6,6 +6,11 @@ export const metadata: Metadata = {
   title: 'RAJA DIGITAL STUDIO | Srivaikuntam | Wedding Cinematography & Photography',
   description:
     'Raja Digital Studio is Srivaikuntam’s premier creative wedding cinematography, candid photography, and digital photo lab studio. Located opposite Taluk Office, Arasalvar Kovil St. Contact: 9443486821.',
+  icons: {
+    icon: '/icon.svg',
+    shortcut: '/icon.svg',
+    apple: '/icon.svg',
+  },
   keywords: [
     'Raja Digital Studio',
     'Raja Studio Srivaikuntam',

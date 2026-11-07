@@ -114,3 +114,4 @@ export const LocationMap: React.FC = () => {
     </section>
   );
 };
+
