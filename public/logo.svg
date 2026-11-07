@@ -1,0 +1,20 @@
+<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="46" stroke="url(#goldGradient)" stroke-width="2.5" stroke-dasharray="4 2" opacity="0.8"/>
+  <circle cx="50" cy="50" r="41" stroke="url(#goldGradient)" stroke-width="1.5" opacity="0.6"/>
+  <path d="M32 30L38 40L50 24L62 40L68 30L65 44H35L32 30Z" fill="url(#goldGradient)"/>
+  <circle cx="32" cy="28" r="2.5" fill="#FFF"/>
+  <circle cx="50" cy="22" r="3" fill="#FFF"/>
+  <circle cx="68" cy="28" r="2.5" fill="#FFF"/>
+  <circle cx="50" cy="62" r="22" stroke="url(#goldGradient)" stroke-width="2" fill="#0E0E12"/>
+  <path d="M50 42L57 56H43L50 42Z" fill="url(#goldGradient)" opacity="0.3"/>
+  <path d="M42 54L55 58L45 68L42 54Z" fill="url(#goldGradient)" opacity="0.3"/>
+  <text x="50" y="70" text-anchor="middle" font-size="24" font-weight="800" font-family="Georgia, serif" fill="url(#goldGradient)">R</text>
+  <defs>
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF2B2" />
+      <stop offset="35%" stop-color="#E5C04B" />
+      <stop offset="70%" stop-color="#D4AF37" />
+      <stop offset="100%" stop-color="#9A7B1C" />
+    </linearGradient>
+  </defs>
+</svg>

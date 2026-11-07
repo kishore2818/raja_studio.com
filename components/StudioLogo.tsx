@@ -30,10 +30,10 @@ export const StudioLogo: React.FC<StudioLogoProps> = ({
         <div className="absolute inset-0 rounded-full bg-studio-gold/20 blur-md pointer-events-none" />
 
         {!imgError ? (
-          /* Attempt to load custom image file if placed in public/logo.png or public/logo.svg */
+          /* High-res vector emblem matching Raja Digital Studio */
           /* eslint-disable-next-line @next/next/no-img-element */
           <img
-            src="/logo.png"
+            src="/logo.svg"
             alt="Raja Digital Studio Logo"
             className="w-full h-full object-contain relative z-10"
             onError={() => setImgError(true)}
