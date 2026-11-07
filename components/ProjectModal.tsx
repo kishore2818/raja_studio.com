@@ -27,7 +27,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
   if (!project) return null;
 
   const projectWhatsappMessage = encodeURIComponent(
-    `Hello Raja Digital Studio, I saw your "${project.title}" (${project.category}) on your website. I want to inquire about a similar service.`
+    `Hello Durai, I saw your "${project.title}" (${project.category}) on your website. I want to inquire about a similar service.`
   );
 
   return (

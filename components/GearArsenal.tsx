@@ -44,32 +44,40 @@ export const GearArsenal: React.FC = () => {
   ];
 
   return (
-    <section id="gear" className="py-20 sm:py-28 relative bg-studio-pitch border-t border-studio-border/60">
+    <section id="gear" className="py-16 sm:py-28 relative bg-studio-pitch border-t border-studio-border/60 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-16 gap-4 sm:gap-6">
           <div>
-            <div className="flex items-center gap-2 text-studio-gold font-mono text-xs uppercase tracking-widest mb-3">
+            <div className="flex items-center gap-2 text-studio-gold font-mono text-xs uppercase tracking-widest mb-2 sm:mb-3">
               <Sparkles className="w-4 h-4" />
               <span>In-House Studio & Lab Technology</span>
             </div>
-            <h2 className="font-display text-3xl sm:text-5xl font-black text-white tracking-tight uppercase">
+            <h2 className="font-display text-2xl sm:text-5xl font-black text-white tracking-tight uppercase">
               Studio Machinery &{' '}
               <span className="italic font-serif font-normal text-studio-gold lowercase">
                 equipment.
               </span>
             </h2>
           </div>
-          <p className="font-sans text-sm sm:text-base text-studio-silver max-w-md">
+          <p className="font-sans text-xs sm:text-base text-studio-silver max-w-md">
             We operate in-house cinema gear, high-resolution flex printing machinery, and instant passport photo stations under one roof in Srivaikuntam.
           </p>
         </div>
 
-        {/* Equipment Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Mobile Swipe Prompt */}
+        <div className="sm:hidden flex items-center justify-between text-[11px] font-mono text-studio-gold mb-3 px-1">
+          <span>Swipe equipment left to right →</span>
+          <span>{labEquipment.length} machines</span>
+        </div>
+
+        {/* Equipment Grid:
+            - Mobile: Left-to-right horizontal scroll
+            - Laptop / Desktop: Untouched grid */}
+        <div className="flex sm:grid sm:grid-cols-2 lg:grid-cols-3 overflow-x-auto sm:overflow-x-visible snap-x snap-mandatory sm:snap-none scrollbar-none gap-4 sm:gap-6 pb-4 sm:pb-0 -mx-4 px-4 sm:mx-0 sm:px-0">
           {labEquipment.map((item, idx) => (
             <div
               key={idx}
-              className="p-6 rounded-2xl bg-studio-surface/80 border border-studio-border hover:border-studio-gold/50 transition-all duration-300 group flex flex-col justify-between"
+              className="w-[75vw] sm:w-auto shrink-0 snap-center sm:shrink p-5 sm:p-6 rounded-2xl bg-studio-surface/80 border border-studio-border hover:border-studio-gold/50 transition-all duration-300 group flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center justify-between mb-4">
@@ -81,18 +89,18 @@ export const GearArsenal: React.FC = () => {
                   </span>
                 </div>
 
-                <h3 className="font-display text-lg font-bold text-white mb-2 group-hover:text-studio-gold transition-colors">
+                <h3 className="font-display text-base sm:text-lg font-bold text-white mb-2 group-hover:text-studio-gold transition-colors line-clamp-1">
                   {item.name}
                 </h3>
 
-                <p className="font-sans text-xs text-studio-silver leading-relaxed">
+                <p className="font-sans text-xs text-studio-silver leading-relaxed line-clamp-3 sm:line-clamp-none">
                   {item.spec}
                 </p>
               </div>
 
               <div className="mt-4 pt-3 border-t border-studio-border/40 flex items-center justify-between text-[11px] font-mono text-studio-muted">
-                <span>In-House Srivaikuntam Lab</span>
-                <span className="text-emerald-400">Active Daily</span>
+                <span>Srivaikuntam Lab</span>
+                <span className="text-emerald-400 font-semibold">Active Daily</span>
               </div>
             </div>
           ))}

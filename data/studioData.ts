@@ -38,7 +38,7 @@ export const STUDIO_INFO = {
   phone: "+91 9443486821",
   rawPhone: "9443486821",
   whatsapp: "919443486821",
-  whatsappLink: "https://wa.me/919443486821?text=Hi%20Raja%20Digital%20Studio,%20I%20would%20like%20to%20inquire%20about%20your%20services%20(Wedding%20Shoots%20/%20Flex%20Printing%20/%20Passport%20Photo%20/%20Framing).",
+  whatsappLink: "https://wa.me/919443486821?text=Hi%20Durai,%20I%20would%20like%20to%20inquire%20about%20your%20studio%20services%20(Wedding%20Shoots%20/%20Flex%20Printing%20/%20Passport%20Photo%20/%20Framing).",
   callLink: "tel:9443486821",
   email: "rajadigitalstudio@gmail.com",
   referenceSite: "https://www.rajastudiosrivi.in/",

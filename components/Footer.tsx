@@ -90,17 +90,6 @@ export const Footer: React.FC = () => {
             <p className="text-xs font-mono text-studio-gold">
               Hours: {STUDIO_INFO.openingHours}
             </p>
-            <div className="pt-2">
-              <a
-                href={STUDIO_INFO.referenceSite}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-xs font-mono text-studio-muted hover:text-studio-gold transition-colors"
-              >
-                <span>Referenced Site: rajastudiosrivi.in</span>
-                <ExternalLink className="w-3 h-3" />
-              </a>
-            </div>
           </div>
         </div>
 

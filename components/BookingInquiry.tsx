@@ -15,13 +15,14 @@ export const BookingInquiry: React.FC = () => {
   const handleWhatsAppSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    const text = `*New Studio Inquiry - Raja Digital Studio*
+    const text = `Hi Durai,
+*New Studio Service Inquiry*
 👤 *Customer Name:* ${name || 'Customer'}
 📞 *Phone Number:* ${phone || 'Not provided'}
 🎯 *Required Service:* ${service}
 📅 *Date / Required By:* ${eventDate || 'Immediate / To discuss'}
 📍 *Location / Town:* ${location || 'Srivaikuntam / Thoothukudi'}
-📝 *Details / Size / Notes:* ${notes || 'None'}
+📝 *Order Details / Size:* ${notes || 'None'}
 
 _Sent via Raja Digital Studio Website_`;
 

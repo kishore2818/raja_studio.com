@@ -78,9 +78,9 @@ export const StudioLogo: React.FC<StudioLogoProps> = ({
           <div className="flex items-center gap-1.5 mt-0.5 overflow-hidden">
             <span className="h-[1px] w-2.5 bg-studio-gold/60 shrink-0" />
             <span
-              className={`font-mono tracking-wider sm:tracking-[0.18em] uppercase text-studio-gold ${sizeClasses.sub} font-medium truncate`}
+              className={`font-mono tracking-wider sm:tracking-[0.16em] uppercase text-studio-gold ${sizeClasses.sub} font-medium truncate`}
             >
-              STUDIO • SRIVI
+              STUDIO • SRIVAIKUNTAM
             </span>
           </div>
         </div>
