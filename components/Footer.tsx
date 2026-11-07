@@ -18,7 +18,7 @@ export const Footer: React.FC = () => {
           <div className="lg:col-span-5 space-y-4">
             <StudioLogo size="lg" />
             <p className="font-sans text-xs sm:text-sm text-studio-silver max-w-sm leading-relaxed mt-4">
-              Premier cinematography, candid photography, and digital color lab. Dedicated to immortalizing your family&apos;s most cherished celebrations across South India.
+              Srivaikuntam&apos;s complete digital photo studio: 5-minute passport photos, grand wedding cinematography, custom flex banner design & printing, Italian photobooks, and wooden framing.
             </p>
             <div className="pt-2 flex items-center gap-3">
               <a
