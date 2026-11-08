@@ -159,7 +159,6 @@ _Sent via Raja Digital Studio Website_`;
                       <option value="Instant 5-Minute Passport Size Photos">Instant Passport Photos (5 Mins)</option>
                       <option value="Photo Framing & Old Photo Restoration">Photo Framing & Old Photo Repair</option>
                       <option value="Digital Photo Lab & Italian Album">Digital Photo Lab & Italian Album</option>
-                      <option value="Personalized Photo Gifts (Mug / Keychain / Acrylic)">Personalized Photo Gifts (Mug / Gifts)</option>
                       <option value="Pre/Post Wedding Outdoor Shoot">Pre / Post Wedding Outdoor Shoot</option>
                       <option value="Housewarming / Baby Shower / Birthday Shoot">Birthday / Family Event Shoot</option>
                     </select>

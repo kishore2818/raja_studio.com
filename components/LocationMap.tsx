@@ -151,19 +151,6 @@ export const LocationMap: React.FC = () => {
               referrerPolicy="strict-origin-when-cross-origin"
             />
 
-            {/* Top-Right Direct Open Navigation Button */}
-            <div className="absolute top-4 right-4 z-10 flex items-center gap-2">
-              <a
-                href={STUDIO_INFO.googleMapsUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-studio-pitch/90 hover:bg-studio-pitch text-studio-cream border border-studio-border/80 text-xs font-mono px-3 py-1.5 rounded-xl shadow-lg flex items-center gap-1.5 transition-all active:scale-95 backdrop-blur-md"
-              >
-                <Navigation className="w-3.5 h-3.5 text-studio-gold fill-studio-gold" />
-                <span>Open in Google Maps</span>
-              </a>
-            </div>
-
             {/* Bottom Status Bar */}
             <div className="absolute bottom-3 left-3 bg-studio-pitch/90 backdrop-blur-md px-3 py-1.5 rounded-lg border border-studio-border text-[11px] font-mono text-studio-silver flex items-center gap-1.5 pointer-events-none z-10">
               <span className="w-2 h-2 rounded-full bg-studio-gold animate-pulse" />

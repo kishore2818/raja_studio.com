@@ -10,7 +10,7 @@ const CATEGORIES = [
   'Weddings',
   'Flex Design',
   'Passport & Portraits',
-  'Framing & Gifts',
+  'Photo Framing',
   'Photo Lab',
 ] as const;
 

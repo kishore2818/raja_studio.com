@@ -2,7 +2,7 @@ export interface Project {
   id: string;
   title: string;
   subtitle: string;
-  category: 'All' | 'Weddings' | 'Flex Design' | 'Passport & Portraits' | 'Framing & Gifts' | 'Photo Lab';
+  category: 'All' | 'Weddings' | 'Flex Design' | 'Passport & Portraits' | 'Photo Framing' | 'Photo Lab';
   year: string;
   client: string;
   coverImage: string;
@@ -23,7 +23,7 @@ export interface ServiceItem {
   deliverables: string[];
   badge: string;
   priceNote?: string;
-  iconType: 'camera' | 'printer' | 'portrait' | 'gift' | 'frame' | 'video';
+  iconType: 'camera' | 'printer' | 'portrait' | 'frame' | 'video';
   image: string;
 }
 
@@ -38,7 +38,7 @@ export const STUDIO_INFO = {
   phone: "+91 9443486821",
   rawPhone: "9443486821",
   whatsapp: "919443486821",
-  whatsappLink: "https://wa.me/919443486821?text=Hi%20Durai,%20I%20would%20like%20to%20inquire%20about%20your%20studio%20services%20(Wedding%20Shoots%20/%20Flex%20Printing%20/%20Passport%20Photo%20/%20Framing).",
+  whatsappLink: "https://wa.me/919443486821?text=Hi%20Durai,%20I%20would%20like%20to%20inquire%20about%20your%20studio%20services%20(Wedding%20Shoots%20/%20Flex%20Printing%20/%20Passport%20Photo%20/%20Photo%20Framing).",
   callLink: "tel:9443486821",
   email: "rajadigitalstudio@gmail.com",
   referenceSite: "https://www.rajastudiosrivi.in/",
@@ -136,23 +136,6 @@ export const SERVICES: ServiceItem[] = [
     priceNote: "Preserve Heritage",
     iconType: "frame",
     image: "/images/photo-framing.jpg"
-  },
-  {
-    id: "personalized-photo-gifts",
-    title: "Customized Photo Gifts & Mugs",
-    tag: "PERFECT FOR BIRTHDAYS & EVENTS",
-    description: "Create memorable personalized gifts for loved ones: magic mugs, acrylic photo cutouts, customized keychains, LED crystal lamps, and printed t-shirts.",
-    deliverables: [
-      "Color Changing Magic Mugs & Coffee Mugs",
-      "Laser Cut Acrylic Photo Stands",
-      "Customized Photo Pillows & Cushions",
-      "Personalized Keychains & Mobile Pops",
-      "Bulk Return Gifts for Functions"
-    ],
-    badge: "Custom Gifts",
-    priceNote: "Instant Gift Printing",
-    iconType: "gift",
-    image: "/images/photo-gifts.jpg"
   }
 ];
 
@@ -234,7 +217,7 @@ export const PROJECTS: Project[] = [
     id: "ancestral-photo-restoration",
     title: "1960s Ancestral Portrait Restoration & Frame",
     subtitle: "B&W Scratch Removal & Digital Colorization",
-    category: "Framing & Gifts",
+    category: "Photo Framing",
     year: "2024",
     client: "Ramasamy Chettiar Family",
     coverImage: "/images/photo-framing.jpg",
@@ -246,24 +229,6 @@ export const PROJECTS: Project[] = [
     summary: "Restored a heavily torn, water-damaged 60-year-old black & white family photo, performed natural skin colorization, and framed in an antique gold carved synthetic frame with sparkle lamination.",
     gallery: [
       "/images/photo-framing.jpg"
-    ]
-  },
-  {
-    id: "birthday-magic-mug-gifts",
-    title: "Personalized Magic Mug & Acrylic Photo Stand",
-    subtitle: "First Birthday Custom Function Gifts",
-    category: "Framing & Gifts",
-    year: "2025",
-    client: "Baby Aaradhya's 1st Birthday",
-    coverImage: "/images/photo-gifts.jpg",
-    aspectRatio: "square",
-    featured: false,
-    highlightTag: "Custom Gifts",
-    serviceType: "Photo Gifts & Merchandise",
-    turnaroundTime: "1 Day",
-    summary: "Batch of 50 personalized ceramic magic mugs revealing the baby's photo when hot tea/coffee is poured, along with an 8-inch laser-cut acrylic table stand.",
-    gallery: [
-      "/images/photo-gifts.jpg"
     ]
   }
 ];
