@@ -67,7 +67,7 @@ export const SERVICES: ServiceItem[] = [
     badge: "5 Min Delivery",
     priceNote: "Starting from ₹60",
     iconType: "portrait",
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop"
+    image: "/images/passport-studio.jpg"
   },
   {
     id: "wedding-photography-video",
@@ -84,7 +84,7 @@ export const SERVICES: ServiceItem[] = [
     badge: "Most Popular",
     priceNote: "Customizable Packages",
     iconType: "camera",
-    image: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?q=80&w=800&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?q=80&w=1200&auto=format&fit=crop"
   },
   {
     id: "flex-design-printing",
@@ -101,7 +101,7 @@ export const SERVICES: ServiceItem[] = [
     badge: "Same-Day Print",
     priceNote: "Per Sq.Ft Best Rates",
     iconType: "printer",
-    image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=800&auto=format&fit=crop"
+    image: "/images/flex-printing.jpg"
   },
   {
     id: "luxury-photobooks",
@@ -118,7 +118,7 @@ export const SERVICES: ServiceItem[] = [
     badge: "In-House Lab",
     priceNote: "Lifetime Durability",
     iconType: "video",
-    image: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=800&auto=format&fit=crop"
+    image: "/images/wedding-album.jpg"
   },
   {
     id: "photo-framing-restoration",
@@ -135,7 +135,7 @@ export const SERVICES: ServiceItem[] = [
     badge: "Restoration Masters",
     priceNote: "Preserve Heritage",
     iconType: "frame",
-    image: "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=800&auto=format&fit=crop"
+    image: "/images/photo-framing.jpg"
   },
   {
     id: "personalized-photo-gifts",
@@ -152,7 +152,7 @@ export const SERVICES: ServiceItem[] = [
     badge: "Custom Gifts",
     priceNote: "Instant Gift Printing",
     iconType: "gift",
-    image: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=800&auto=format&fit=crop"
+    image: "/images/photo-gifts.jpg"
   }
 ];
 
@@ -183,7 +183,7 @@ export const PROJECTS: Project[] = [
     category: "Flex Design",
     year: "2024",
     client: "Murugan Family Kalyanam",
-    coverImage: "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1600&auto=format&fit=crop",
+    coverImage: "/images/flex-printing.jpg",
     aspectRatio: "cinematic",
     featured: true,
     highlightTag: "Same Day Print",
@@ -191,7 +191,7 @@ export const PROJECTS: Project[] = [
     turnaroundTime: "Same Day (4 Hours)",
     summary: "Designed with traditional Tamil temple motifs, gold borders, HD bride & groom cutouts, and printed on heavy-grade 340gsm Star flex with brass eyelets for the wedding hall entrance.",
     gallery: [
-      "https://images.unsplash.com/photo-1542744094-3a31f272c490?q=80&w=1200&auto=format&fit=crop"
+      "/images/flex-printing.jpg"
     ]
   },
   {
@@ -201,7 +201,7 @@ export const PROJECTS: Project[] = [
     category: "Passport & Portraits",
     year: "2025",
     client: "Walk-in Patrons & Govt Exam Candidates",
-    coverImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1600&auto=format&fit=crop",
+    coverImage: "/images/passport-studio.jpg",
     aspectRatio: "square",
     featured: true,
     highlightTag: "Ready in 5 Mins",
@@ -209,7 +209,7 @@ export const PROJECTS: Project[] = [
     turnaroundTime: "5 Minutes",
     summary: "High-key studio lighting with softboxes for even skin tone, subtle digital blemish clean-up, and instant dye-sublimation print on glossy photo paper complying with Indian Passport & Overseas Visa standards.",
     gallery: [
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1200&auto=format&fit=crop"
+      "/images/passport-studio.jpg"
     ]
   },
   {
@@ -219,7 +219,7 @@ export const PROJECTS: Project[] = [
     category: "Photo Lab",
     year: "2024",
     client: "Karthik & Deepa",
-    coverImage: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=1600&auto=format&fit=crop",
+    coverImage: "/images/wedding-album.jpg",
     aspectRatio: "cinematic",
     featured: false,
     highlightTag: "Lifetime Warranty",
@@ -227,7 +227,7 @@ export const PROJECTS: Project[] = [
     turnaroundTime: "12 Days",
     summary: "40-page master album featuring lay-flat binding, metallic gloss highlights, and an acrylic front cover packaged in a custom engraved leather presentation briefcase.",
     gallery: [
-      "https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=1200&auto=format&fit=crop"
+      "/images/wedding-album.jpg"
     ]
   },
   {
@@ -237,7 +237,7 @@ export const PROJECTS: Project[] = [
     category: "Framing & Gifts",
     year: "2024",
     client: "Ramasamy Chettiar Family",
-    coverImage: "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=1600&auto=format&fit=crop",
+    coverImage: "/images/photo-framing.jpg",
     aspectRatio: "square",
     featured: false,
     highlightTag: "Restoration",
@@ -245,7 +245,7 @@ export const PROJECTS: Project[] = [
     turnaroundTime: "2 Days",
     summary: "Restored a heavily torn, water-damaged 60-year-old black & white family photo, performed natural skin colorization, and framed in an antique gold carved synthetic frame with sparkle lamination.",
     gallery: [
-      "https://images.unsplash.com/photo-1579783902614-a3fb3927b675?q=80&w=1200&auto=format&fit=crop"
+      "/images/photo-framing.jpg"
     ]
   },
   {
@@ -255,7 +255,7 @@ export const PROJECTS: Project[] = [
     category: "Framing & Gifts",
     year: "2025",
     client: "Baby Aaradhya's 1st Birthday",
-    coverImage: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=1600&auto=format&fit=crop",
+    coverImage: "/images/photo-gifts.jpg",
     aspectRatio: "square",
     featured: false,
     highlightTag: "Custom Gifts",
@@ -263,7 +263,7 @@ export const PROJECTS: Project[] = [
     turnaroundTime: "1 Day",
     summary: "Batch of 50 personalized ceramic magic mugs revealing the baby's photo when hot tea/coffee is poured, along with an 8-inch laser-cut acrylic table stand.",
     gallery: [
-      "https://images.unsplash.com/photo-1524805444758-089113d48a6d?q=80&w=1200&auto=format&fit=crop"
+      "/images/photo-gifts.jpg"
     ]
   }
 ];

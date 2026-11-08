@@ -24,7 +24,7 @@ export const LocationMap: React.FC = () => {
     };
 
     checkStatus();
-    const interval = setInterval(checkStatus, 30000); // Check every 30 seconds
+    const interval = setInterval(checkStatus, 30000);
     return () => clearInterval(interval);
   }, []);
 
@@ -33,7 +33,7 @@ export const LocationMap: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-14">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-studio-gold/10 border border-studio-gold/30 text-studio-gold font-mono text-xs uppercase tracking-widest mb-4">
-            <MapPin className="w-3.5 h-3.5 text-red-500" />
+            <MapPin className="w-3.5 h-3.5 text-studio-gold" />
             <span>Studio Location</span>
           </div>
           <h2 className="font-display text-3xl sm:text-5xl font-black text-white tracking-tight uppercase mb-4">
@@ -56,16 +56,16 @@ export const LocationMap: React.FC = () => {
                   Raja Digital Studio & Video
                 </h3>
 
-                {/* Real-time Dynamic Open / Closed Status Badge */}
+                {/* Real-time Dynamic Open / Closed Status Badge Styled to Studio Color Palette */}
                 {mounted && (
                   isOpen ? (
-                    <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 font-mono text-[11px] font-semibold shrink-0">
-                      <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-studio-gold/15 border border-studio-gold/40 text-studio-gold font-mono text-[11px] font-semibold shrink-0">
+                      <span className="w-2 h-2 rounded-full bg-studio-gold animate-pulse" />
                       Open Now
                     </span>
                   ) : (
-                    <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-rose-500/15 border border-rose-500/30 text-rose-400 font-mono text-[11px] font-semibold shrink-0">
-                      <span className="w-2 h-2 rounded-full bg-rose-500" />
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-studio-card border border-studio-border text-studio-silver font-mono text-[11px] font-medium shrink-0">
+                      <span className="w-2 h-2 rounded-full bg-studio-muted" />
                       Closed Now
                     </span>
                   )
@@ -74,8 +74,9 @@ export const LocationMap: React.FC = () => {
 
               <div className="space-y-4">
                 <div className="flex items-start gap-3.5">
-                  <div className="w-10 h-10 rounded-xl bg-red-500/15 border border-red-500/30 text-red-500 flex items-center justify-center shrink-0 mt-0.5 shadow-md shadow-red-500/10">
-                    <MapPin className="w-5 h-5 fill-red-500 text-red-500" />
+                  {/* Pin Icon styled to Studio Palette (Gold & Studio Card) */}
+                  <div className="w-10 h-10 rounded-xl bg-studio-card border border-studio-border text-studio-gold flex items-center justify-center shrink-0 mt-0.5 shadow-md shadow-studio-gold/10">
+                    <MapPin className="w-5 h-5 text-studio-gold" />
                   </div>
                   <div>
                     <p className="text-xs font-mono text-studio-muted uppercase tracking-wider mb-1">
@@ -91,7 +92,7 @@ export const LocationMap: React.FC = () => {
                 </div>
 
                 <div className="flex items-start gap-3.5 pt-4 border-t border-studio-border/60">
-                  <div className="w-10 h-10 rounded-xl bg-studio-card border border-studio-border text-studio-gold flex items-center justify-center shrink-0 mt-0.5">
+                  <div className="w-10 h-10 rounded-xl bg-studio-card border border-studio-border text-studio-gold flex items-center justify-center shrink-0 mt-0.5 shadow-md shadow-studio-gold/10">
                     <Clock className="w-5 h-5" />
                   </div>
                   <div>
@@ -108,7 +109,7 @@ export const LocationMap: React.FC = () => {
                 </div>
 
                 <div className="flex items-start gap-3.5 pt-4 border-t border-studio-border/60">
-                  <div className="w-10 h-10 rounded-xl bg-studio-card border border-studio-border text-studio-gold flex items-center justify-center shrink-0 mt-0.5">
+                  <div className="w-10 h-10 rounded-xl bg-studio-card border border-studio-border text-studio-gold flex items-center justify-center shrink-0 mt-0.5 shadow-md shadow-studio-gold/10">
                     <Phone className="w-5 h-5" />
                   </div>
                   <div>
@@ -165,7 +166,7 @@ export const LocationMap: React.FC = () => {
 
             {/* Bottom Status Bar */}
             <div className="absolute bottom-3 left-3 bg-studio-pitch/90 backdrop-blur-md px-3 py-1.5 rounded-lg border border-studio-border text-[11px] font-mono text-studio-silver flex items-center gap-1.5 pointer-events-none z-10">
-              <span className={`w-2 h-2 rounded-full ${mounted && !isOpen ? 'bg-rose-500' : 'bg-emerald-400 animate-pulse'}`} />
+              <span className="w-2 h-2 rounded-full bg-studio-gold animate-pulse" />
               <span>Raja Digital Studio & Video • Srivaikuntam</span>
             </div>
           </div>

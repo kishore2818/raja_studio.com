@@ -206,10 +206,10 @@ _Sent via Raja Digital Studio Website_`;
 
                 <button
                   type="submit"
-                  className="w-full py-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm uppercase tracking-wider transition-all duration-300 shadow-xl shadow-emerald-600/30 flex items-center justify-center gap-2 group active:scale-[0.99]"
+                  className="w-full py-4 px-5 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs sm:text-sm tracking-wider uppercase transition-all duration-300 shadow-xl shadow-emerald-600/30 flex items-center justify-center gap-2.5 active:scale-[0.98]"
                 >
-                  <MessageCircle className="w-5 h-5" />
-                  <span>Send Order Inquiry via WhatsApp</span>
+                  <MessageCircle className="w-5 h-5 shrink-0 text-white" />
+                  <span className="text-center">Send Order Inquiry via WhatsApp</span>
                 </button>
               </form>
             </div>
