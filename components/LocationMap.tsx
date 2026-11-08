@@ -1,10 +1,33 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { STUDIO_INFO } from '../data/studioData';
 import { MapPin, Navigation, Clock, Phone } from 'lucide-react';
 
 export const LocationMap: React.FC = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+    const checkStatus = () => {
+      // Calculate real-time status in Indian Standard Time (IST: Asia/Kolkata)
+      const now = new Date();
+      const istString = now.toLocaleString("en-US", { timeZone: "Asia/Kolkata" });
+      const istDate = new Date(istString);
+      const currentMinutes = istDate.getHours() * 60 + istDate.getMinutes();
+      
+      const openMinutes = 8 * 60; // 8:00 AM = 480 mins
+      const closeMinutes = 21 * 60 + 30; // 9:30 PM = 1290 mins
+
+      setIsOpen(currentMinutes >= openMinutes && currentMinutes < closeMinutes);
+    };
+
+    checkStatus();
+    const interval = setInterval(checkStatus, 30000); // Check every 30 seconds
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section id="location" className="py-20 sm:py-28 relative bg-studio-obsidian border-t border-studio-border/60">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -28,14 +51,25 @@ export const LocationMap: React.FC = () => {
           {/* Address & Hours Information Card */}
           <div className="lg:col-span-5 p-6 sm:p-8 rounded-3xl bg-studio-surface border border-studio-border/80 flex flex-col justify-between space-y-8">
             <div className="space-y-6">
-              <div className="flex items-center justify-between">
+              <div className="flex items-center justify-between gap-2">
                 <h3 className="font-display text-2xl font-bold text-white">
                   Raja Digital Studio & Video
                 </h3>
-                <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 font-mono text-[11px] font-semibold">
-                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                  Open Now
-                </span>
+
+                {/* Real-time Dynamic Open / Closed Status Badge */}
+                {mounted && (
+                  isOpen ? (
+                    <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 font-mono text-[11px] font-semibold shrink-0">
+                      <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                      Open Now
+                    </span>
+                  ) : (
+                    <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-rose-500/15 border border-rose-500/30 text-rose-400 font-mono text-[11px] font-semibold shrink-0">
+                      <span className="w-2 h-2 rounded-full bg-rose-500" />
+                      Closed Now
+                    </span>
+                  )
+                )}
               </div>
 
               <div className="space-y-4">
@@ -67,7 +101,9 @@ export const LocationMap: React.FC = () => {
                     <p className="text-sm text-studio-cream font-medium">
                       {STUDIO_INFO.openingHours}
                     </p>
-                    <p className="text-xs text-studio-silver mt-0.5">Open all 7 days for customer service</p>
+                    <p className="text-xs text-studio-silver mt-0.5">
+                      {mounted && (isOpen ? "Open until 9:30 PM today" : "Closed for the day • Opens 8:00 AM tomorrow")}
+                    </p>
                   </div>
                 </div>
 
@@ -104,10 +140,7 @@ export const LocationMap: React.FC = () => {
 
           {/* Map Frame: Verified Google Place Embed with Native Pinned Marker & Softened Brightness */}
           <div className="lg:col-span-7 rounded-3xl overflow-hidden border border-studio-border/90 bg-studio-surface shadow-2xl relative min-h-[380px] sm:min-h-[440px]">
-            {/* Official Google Maps Verified Embed for Raja Digital Studio & Video:
-                - Uses native Google Maps pin locked to the exact place (0x3b0475443bbf2ca7:0xffd2a7a87bf1a261).
-                - Map adjustments (panning, dragging, zooming) keep the pin locked to the physical building.
-                - Reduced brightness filter [filter:brightness(0.85)_contrast(1.02)] softens the glare. */}
+            {/* Official Google Maps Verified Embed for Raja Digital Studio & Video */}
             <iframe
               title="Raja Digital Studio & Video Srivaikuntam Location"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3944.6564126655603!2d77.9120044!3d8.6289454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b0475443bbf2ca7%3A0xffd2a7a87bf1a261!2sRaja%20Digital%20Studio%20%26%20Video!5e0!3m2!1sen!2sin!4v1794154151458!5m2!1sen!2sin"
@@ -132,7 +165,7 @@ export const LocationMap: React.FC = () => {
 
             {/* Bottom Status Bar */}
             <div className="absolute bottom-3 left-3 bg-studio-pitch/90 backdrop-blur-md px-3 py-1.5 rounded-lg border border-studio-border text-[11px] font-mono text-studio-silver flex items-center gap-1.5 pointer-events-none z-10">
-              <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
+              <span className={`w-2 h-2 rounded-full ${mounted && !isOpen ? 'bg-rose-500' : 'bg-emerald-400 animate-pulse'}`} />
               <span>Raja Digital Studio & Video • Srivaikuntam</span>
             </div>
           </div>

@@ -9,13 +9,34 @@ import { Phone, MessageCircle, Menu, X, ArrowUpRight } from 'lucide-react';
 export const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     const handleScroll = () => {
       setScrolled(window.scrollY > 30);
     };
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+
+    // Calculate real-time status in Indian Standard Time (IST: Asia/Kolkata)
+    const checkStatus = () => {
+      const now = new Date();
+      const istString = now.toLocaleString("en-US", { timeZone: "Asia/Kolkata" });
+      const istDate = new Date(istString);
+      const currentMinutes = istDate.getHours() * 60 + istDate.getMinutes();
+      const openMinutes = 8 * 60; // 8:00 AM
+      const closeMinutes = 21 * 60 + 30; // 9:30 PM
+      setIsOpen(currentMinutes >= openMinutes && currentMinutes < closeMinutes);
+    };
+
+    checkStatus();
+    const interval = setInterval(checkStatus, 30000);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      clearInterval(interval);
+    };
   }, []);
 
   const navLinks = [
@@ -106,8 +127,10 @@ export const Navbar: React.FC = () => {
         <div className="fixed inset-0 z-40 bg-studio-pitch/98 backdrop-blur-2xl lg:hidden flex flex-col justify-between pt-24 pb-20 px-6 animate-fadeIn">
           <div className="space-y-6">
             <div className="flex items-center gap-2 py-2 px-3 rounded-full bg-studio-surface border border-studio-border w-fit">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span className="text-xs text-studio-silver font-mono">Open Today: 8:00 AM – 9:30 PM</span>
+              <span className={`w-2 h-2 rounded-full ${mounted && isOpen ? 'bg-emerald-500 animate-pulse' : 'bg-rose-500'}`} />
+              <span className="text-xs text-studio-silver font-mono">
+                {mounted && (isOpen ? 'Open Now: Closes 9:30 PM' : 'Closed Now: Opens 8:00 AM')}
+              </span>
             </div>
 
             <div className="flex flex-col space-y-4">
