@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { STUDIO_INFO } from '../data/studioData';
-import { MapPin, Navigation, Clock, Phone, Sparkles } from 'lucide-react';
+import { MapPin, Navigation, Clock, Phone } from 'lucide-react';
 
 export const LocationMap: React.FC = () => {
   return (
@@ -30,7 +30,7 @@ export const LocationMap: React.FC = () => {
             <div className="space-y-6">
               <div className="flex items-center justify-between">
                 <h3 className="font-display text-2xl font-bold text-white">
-                  Raja Digital Studio
+                  Raja Digital Studio & Video
                 </h3>
                 <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 font-mono text-[11px] font-semibold">
                   <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
@@ -90,7 +90,7 @@ export const LocationMap: React.FC = () => {
               </div>
             </div>
 
-            {/* Directions Action */}
+            {/* Directions Action Button */}
             <a
               href={STUDIO_INFO.googleMapsUrl}
               target="_blank"
@@ -102,50 +102,38 @@ export const LocationMap: React.FC = () => {
             </a>
           </div>
 
-          {/* Bright, Full-Color Map Visual with Centered Red Pin */}
-          <div className="lg:col-span-7 rounded-3xl overflow-hidden border-2 border-studio-border bg-white shadow-2xl relative min-h-[380px] sm:min-h-[440px]">
-            {/* Interactive Bright Google Maps Embed (Standard Natural Full Color) */}
+          {/* Map Frame: Verified Google Place Embed with Native Pinned Marker & Softened Brightness */}
+          <div className="lg:col-span-7 rounded-3xl overflow-hidden border border-studio-border/90 bg-studio-surface shadow-2xl relative min-h-[380px] sm:min-h-[440px]">
+            {/* Official Google Maps Verified Embed for Raja Digital Studio & Video:
+                - Uses native Google Maps pin locked to the exact place (0x3b0475443bbf2ca7:0xffd2a7a87bf1a261).
+                - Map adjustments (panning, dragging, zooming) keep the pin locked to the physical building.
+                - Reduced brightness filter [filter:brightness(0.85)_contrast(1.02)] softens the glare. */}
             <iframe
-              title="Raja Digital Studio Srivaikuntam Location Map"
-              src="https://maps.google.com/maps?q=Srivaikuntam%20Taluk%20Office%20Thoothukudi%20Tamil%20Nadu&t=&z=16&ie=UTF8&iwloc=&output=embed"
-              className="w-full h-full min-h-[380px] sm:min-h-[440px] border-0"
+              title="Raja Digital Studio & Video Srivaikuntam Location"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3944.6564126655603!2d77.9120044!3d8.6289454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b0475443bbf2ca7%3A0xffd2a7a87bf1a261!2sRaja%20Digital%20Studio%20%26%20Video!5e0!3m2!1sen!2sin!4v1794154151458!5m2!1sen!2sin"
+              className="w-full h-full min-h-[380px] sm:min-h-[440px] border-0 transition-opacity duration-300 [filter:brightness(0.85)_contrast(1.02)] hover:[filter:brightness(0.92)_contrast(1.02)]"
+              allowFullScreen
               loading="lazy"
+              referrerPolicy="strict-origin-when-cross-origin"
             />
 
-            {/* Exact Location Floating Red Marker Pin Overlay */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none flex flex-col items-center z-20">
-              {/* Location Badge */}
-              <div className="bg-studio-pitch/95 text-white border border-studio-gold/50 px-3 py-1.5 rounded-full shadow-2xl flex items-center gap-1.5 mb-1 backdrop-blur-md animate-bounce">
-                <span className="w-2 h-2 rounded-full bg-red-500 animate-ping" />
-                <span className="text-[11px] font-bold font-mono tracking-wide text-studio-cream whitespace-nowrap">
-                  Raja Digital Studio (Opp. Taluk Office)
-                </span>
-              </div>
-
-              {/* Red Pin Icon with pulsing radar shadow */}
-              <div className="relative flex items-center justify-center">
-                <MapPin className="w-10 h-10 text-red-600 fill-red-600 drop-shadow-[0_4px_12px_rgba(220,38,38,0.7)]" />
-                <div className="absolute -bottom-1 w-4 h-1.5 bg-black/60 rounded-full blur-[1px]" />
-              </div>
-            </div>
-
-            {/* Map Top-Right Controls */}
+            {/* Top-Right Direct Open Navigation Button */}
             <div className="absolute top-4 right-4 z-10 flex items-center gap-2">
               <a
                 href={STUDIO_INFO.googleMapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-white/95 text-gray-900 hover:bg-white text-xs font-bold px-3 py-1.5 rounded-lg shadow-lg border border-gray-200 flex items-center gap-1.5 transition-transform active:scale-95"
+                className="bg-studio-pitch/90 hover:bg-studio-pitch text-studio-cream border border-studio-border/80 text-xs font-mono px-3 py-1.5 rounded-xl shadow-lg flex items-center gap-1.5 transition-all active:scale-95 backdrop-blur-md"
               >
-                <Navigation className="w-3.5 h-3.5 text-blue-600 fill-blue-600" />
-                <span>Open in Maps</span>
+                <Navigation className="w-3.5 h-3.5 text-studio-gold fill-studio-gold" />
+                <span>Open in Google Maps</span>
               </a>
             </div>
 
-            {/* Map Bottom Status Bar */}
+            {/* Bottom Status Bar */}
             <div className="absolute bottom-3 left-3 bg-studio-pitch/90 backdrop-blur-md px-3 py-1.5 rounded-lg border border-studio-border text-[11px] font-mono text-studio-silver flex items-center gap-1.5 pointer-events-none z-10">
-              <span className="w-2 h-2 rounded-full bg-red-500" />
-              <span>Srivaikuntam • Thoothukudi District</span>
+              <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
+              <span>Raja Digital Studio & Video • Srivaikuntam</span>
             </div>
           </div>
         </div>

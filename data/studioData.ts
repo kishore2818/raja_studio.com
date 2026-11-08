@@ -34,7 +34,7 @@ export const STUDIO_INFO = {
   subtext: "Srivaikuntam's Trusted Studio for Grand Wedding Shoots, Instant 5-Min Passport Photos, Large Format Flex Banner Design & Printing, Handcrafted Photo Framing, and Italian Wedding Albums.",
   foundedYear: "2010",
   address: "79, Taluk Office Opp, Arasalvar Kovil St, Tiruvaigundam, Srivaikuntam, Thoothukudi-628601, Tamil Nadu",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Raja+Digital+Studio+79+Taluk+Office+Opp+Arasalvar+Kovil+St+Srivaikuntam+Thoothukudi+628601",
+  googleMapsUrl: "https://www.google.com/maps/place/Raja+Digital+Studio+%26+Video/@8.6289454,77.9120044,17z",
   phone: "+91 9443486821",
   rawPhone: "9443486821",
   whatsapp: "919443486821",
